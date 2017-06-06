@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
   get 'home/index'
 
-  get 'home/show'
+  get 'home/admin'
 
   root to: "home#index"
+ 
 
   devise_for :admins, controllers: {
   sessions:      'admins/sessions',

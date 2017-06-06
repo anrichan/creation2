@@ -1,7 +1,9 @@
 class HomeController < ApplicationController
+
+  before_action :authenticate_admin!, only: :admin
   def index
   end
 
-  def show
+  def admin
   end
 end
