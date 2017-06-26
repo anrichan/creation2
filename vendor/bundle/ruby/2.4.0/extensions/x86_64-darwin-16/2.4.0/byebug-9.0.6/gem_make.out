@@ -1,0 +1,19 @@
+current directory: /Users/anri/Desktop/Training/creation2/vendor/bundle/ruby/2.4.0/gems/byebug-9.0.6/ext/byebug
+/Users/anri/.rvm/rubies/ruby-2.4.0/bin/ruby -r ./siteconf20170615-11546-1djbgvk.rb extconf.rb
+creating Makefile
+
+current directory: /Users/anri/Desktop/Training/creation2/vendor/bundle/ruby/2.4.0/gems/byebug-9.0.6/ext/byebug
+make "DESTDIR=" clean
+
+current directory: /Users/anri/Desktop/Training/creation2/vendor/bundle/ruby/2.4.0/gems/byebug-9.0.6/ext/byebug
+make "DESTDIR="
+compiling breakpoint.c
+compiling byebug.c
+compiling context.c
+compiling locker.c
+compiling threads.c
+linking shared-object byebug/byebug.bundle
+
+current directory: /Users/anri/Desktop/Training/creation2/vendor/bundle/ruby/2.4.0/gems/byebug-9.0.6/ext/byebug
+make "DESTDIR=" install
+/usr/local/opt/coreutils/bin/ginstall -c -m 0755 byebug.bundle ./.gem.20170615-11546-1ibtb7n/byebug

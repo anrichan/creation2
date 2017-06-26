@@ -1,5 +1,10 @@
-<p>Welcome <%= @email %>!</p>
+<p>[<%= @resource.username %>さん]</p>
+<p>勤怠管理システムへようこそ。</p>
 
-<p>You can confirm your account email through the link below:</p>
+<p>以下のメールアドレス・パスワードを使ってログインしてください。</p>
+<p>メールアドレス：[<%= @email %>]</p>
+<p>パスワード：[<%= @resource.password %>]</p>
+<p>ログインURL:<%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
+<p>なお、ログイン後は必ずパスワードを変更するようにしてください。</p>
 
-<p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
+

@@ -1,0 +1,63 @@
+<%= form_for @profile do |f| %>
+<% if @profile.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @profile.errors.count %>件のエラーが発生しました。</h2>
+
+      <ul>
+      <% @profile.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+ <div class="birth_date_field">
+  <%= f.label :birthday %>
+  <%= raw sprintf(
+              f.date_select(
+                  :birthday,
+                  use_month_numbers: true,
+                  start_year:        1930,
+                  end_year:          (Time.now.year),
+                  default:           Date.new(1989, 1, 1),
+                  date_separator:    '%s'),
+              '年 ', '月 ') + '日' %>
+</div>
+
+ <div class="field">
+  <%= f.label "性別" %><br>
+  <%= f.collection_select :sex_id, Sex.all, :id, :type %>
+ </div>
+
+ <div class="field">
+  <%= f.label "契約種別" %><br>
+  <%= f.select :contract_type, [["正社員", "正社員"], ["契約社員", "契約社員"], ["アルバイト", "アルバイト"], ["その他", "その他"]] %>
+ </div>
+
+ <div class="field">
+    <%= f.label :zipcode %><br>
+    <%= f.text_field :zipcode %>
+  </div>
+
+ <div class="field">
+  <%= f.label :address %><br>
+  <%= f.text_field :address %>
+ </div>
+
+ <div class="field">
+    <%= f.label :tel %><br>
+    <%= f.text_field :tel %>
+ </div>
+
+ <div class="actions">
+    <%= f.submit %>
+  </div>
+
+
+
+<% end %>
+
+
+
+
+profile/new.html.erb

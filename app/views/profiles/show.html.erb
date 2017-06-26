@@ -1,0 +1,18 @@
+<h2>myページかな？</h2>
+
+<p>▶︎name</p>
+<span><%= current_user.username %></span>
+<p>▶︎gender</p>
+<span><%= @profile_sex.type %></span>
+<p>▶︎birthday</p>
+<!-- strftime入れないと時間まで表示される -->
+<span><%= @profile.birthday.strftime("%Y/%m/%d") %></span>
+
+<p>▶︎zeepcode</p>
+<span><%= @profile.zipcode%></span>
+<p>▶︎address</p>
+<span><%= @profile.address%></span>
+<p>▶︎phone</p>
+<span><%= @profile.tel%></span>
+
+

@@ -25,6 +25,22 @@ Rails.application.configure do
 
     config.cache_store = :null_store
   end
+#メーラー設定
+   config.action_mailer.raise_delivery_errors = false
+   config.action_mailer.default_url_options = { host: "localhost", port: 3000 }
+   config.action_mailer.delivery_method = :sendmail
+   config.action_mailer.smtp_settings = {
+     port:                 587,
+     # address:              ENV['MAILE_ADRESS'],
+     # user_name:            ENV['MAILE_USER_NAME'],
+     # password:             ENV['MAILE_PASSWORD'],
+     address:              Settings.mail.mail_address,
+     user_name:            Settings.mail.user_name,
+     password:             Settings.mail.password,
+     authentication:       :plain,
+     enable_starttls_auto: true
+   }
+
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
